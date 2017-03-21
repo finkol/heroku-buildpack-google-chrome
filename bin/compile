@@ -89,10 +89,10 @@ topic "Rewrite package-config files"
 find $BUILD_DIR/.apt -type f -ipath '*/pkgconfig/*.pc' | xargs --no-run-if-empty -n 1 sed -i -e 's!^prefix=\(.*\)$!prefix='"$BUILD_DIR"'/.apt\1!g'
 
 topic "Creating google-chrome-stable shim"
-SHIM=$BUILD_DIR/.apt/usr/bin/google-chrome-stable
+SHIM=$BUILD_DIR/.apt/usr/bin/google-chrome
 rm $SHIM
 cat <<EOF >$SHIM
 #!/usr/bin/env bash
-/app/.apt/opt/google/chrome-stable/google-chrome-stable --headless --no-sandbox --disable-gpu \$@
+/app/.apt/opt/google/chrome/google-chrome --headless --no-sandbox --disable-gpu \$@
 EOF
 chmod +x $SHIM

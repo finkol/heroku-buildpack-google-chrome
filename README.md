@@ -1,6 +1,6 @@
 # heroku-buildpack-google-chrome
 
-This buildpack installs the latest stable version of Chrome Canary and makes the headless version available under the `google-chrome-stable` command.
+This buildpack installs the latest stable version of Chrome Canary and makes the headless version available under the `google-chrome` command.
 
 ## Notes
 
@@ -14,5 +14,7 @@ the page. You may work around this by using the `--remote-debugging-port` flag.
 For example:
 
 ```sh
-$ google-chrome-stable --remote-debugging-port=9222
+$ google-chrome --remote-debugging-port=9222
 ```
+
+The binary should install here: `/app/.apt/opt/google/chrome/google-chrome`
